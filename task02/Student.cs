@@ -1,6 +1,6 @@
 public class Student
 {
-    public string Name { get; set; }
-    public string Faculty { get; set; }
-    public List<int> Grades { get; set; }
+    public required string Name { get; set; }
+    public required string Faculty { get; set; }
+    public required List<int> Grades { get; set; }
 }
