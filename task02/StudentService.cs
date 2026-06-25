@@ -34,6 +34,10 @@ public class StudentService
 
     public string GetFacultyWithHighestAverageGrade()
     {
+        if (!_students.Any())
+        {
+            throw new InvalidOperationException("No students");
+        }
         var groups = _students.GroupBy(s => s.Faculty);
         var maxAvGrade = groups.MaxBy(g => g.Select(s => s.Grades.Average()).Average());
         var result = maxAvGrade.Key; 
