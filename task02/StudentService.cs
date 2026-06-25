@@ -10,26 +10,33 @@ public class StudentService
 
     public IEnumerable<Student> GetStudentsByFaculty(string faculty)
     {
-        throw new NotImplementedException();
+        var result = _students.Where(s => s.Faculty == faculty);
+        return result;
     }
 
     public IEnumerable<Student> GetStudentsWithMinAverageGrade(double minAverageGrade)
     {
-        throw new NotImplementedException();
+        var result = _students.Where(s => s.Grades.Average() >= minAverageGrade);
+        return result;
     }
 
     public IEnumerable<Student> GetStudentsOrderedByName()
     {
-        throw new NotImplementedException();
+        var result = _students.OrderBy(s => s.Name);
+        return result;
     }
 
     public ILookup<string, Student> GroupStudentsByFaculty()
     {
-        throw new NotImplementedException();
+        var result = _students.ToLookup(s => s.Faculty);
+        return result;
     }
 
     public string GetFacultyWithHighestAverageGrade()
     {
-        throw new NotImplementedException();
+        var groups = _students.GroupBy(s => s.Faculty);
+        var maxAvGrade = groups.MaxBy(g => g.Select(s => s.Grades.Average()).Average());
+        var result = maxAvGrade.Key; 
+        return result;
     }
 }
