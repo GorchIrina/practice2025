@@ -1,7 +1,7 @@
 using System;
 
 [DisplayName("Пример класса")]
-[Version(1,0)]
+[Version("1.0")]
 public class SampleClass
 {
     [DisplayName("Числовое свойство")]

@@ -1,4 +1,5 @@
 using Xunit;
+using System.Reflection;
 
 public class AttributeReflectionTests
 {
