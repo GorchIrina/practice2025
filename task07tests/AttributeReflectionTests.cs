@@ -39,4 +39,17 @@ public class AttributeReflectionTests
         Assert.Equal(1, attribute.Major);
         Assert.Equal(0, attribute.Minor);
     }
+
+    [Fact]
+    public void PrintTypeInfo_ShouldPrintCorrectInfo()
+    {
+        var output = new StringWriter();
+        Console.SetOut(output);
+        ReflectionHelper.PrintTypeInfo(typeof(SampleClass));
+        var consoleOutput = output.ToString();
+        Assert.Contains("DisplayName: Пример класса", consoleOutput);
+        Assert.Contains("Version: 1.0", consoleOutput);
+        Assert.Contains("Тестовый метод", consoleOutput);
+        Assert.Contains("Числовое свойство", consoleOutput);
+    }
 }
