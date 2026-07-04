@@ -23,6 +23,6 @@ public class DirectorySizeCommand: ICommand
         {
             filesSize+= new FileInfo(file).Length;
         }
-        Console.WriteLine($"Размер каталога: {filesSize}");
+        Console.WriteLine($"Размер каталога: {filesSize} байт");
     }
 }
