@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task07", "task07\task07.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task07tests", "task07tests\task07tests.csproj", "{BAFA80BE-3863-4B69-8D97-B374B403BCD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataExplorer", "MetadataExplorer\MetadataExplorer.csproj", "{9B1DB296-7368-478A-94B9-372775114622}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{BAFA80BE-3863-4B69-8D97-B374B403BCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAFA80BE-3863-4B69-8D97-B374B403BCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAFA80BE-3863-4B69-8D97-B374B403BCD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1DB296-7368-478A-94B9-372775114622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1DB296-7368-478A-94B9-372775114622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1DB296-7368-478A-94B9-372775114622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1DB296-7368-478A-94B9-372775114622}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
