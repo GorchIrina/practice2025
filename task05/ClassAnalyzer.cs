@@ -9,6 +9,10 @@ public class ClassAnalyzer
 
     public ClassAnalyzer(Type type)
     {
+        if (type == null)
+        {
+            throw new ArgumentNullException(nameof(type));
+        }
         _type = type;
     }
 
