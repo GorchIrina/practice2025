@@ -7,8 +7,22 @@ public class CustomCollection<T> : IEnumerable<T>
 {
     private readonly List<T> _items = new();
 
-    public void Add(T item) => _items.Add(item);
-    public void Remove(T item) => _items.Remove(item);
+    public void Add(T item)
+    {
+        if(item == null)
+        {
+            throw new ArgumentNullException(nameof(item));
+        }
+        _items.Add(item);
+    }
+    public bool Remove(T item)
+    {
+        if(item == null)
+        {
+            return false;
+        }
+        return _items.Remove(item);
+    }
 
     public IEnumerator<T> GetEnumerator() => _items.GetEnumerator();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
@@ -31,6 +45,15 @@ public class CustomCollection<T> : IEnumerable<T>
     
     public IEnumerable<T> FilterAndSort(Func<T, bool> predicate, Func<T, IComparable> keySelector)
     {
+        if(predicate == null)
+        {
+            throw new ArgumentNullException(nameof(predicate));
+        }
+        if(keySelector == null)
+        {
+            throw new ArgumentNullException(nameof(keySelector));
+        }
+
         var filter = _items.Where(predicate);
         var filterSort= filter.OrderBy(keySelector);
         return filterSort;
