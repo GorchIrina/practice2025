@@ -24,7 +24,7 @@ public class DefiniteIntegral
         }
         if (threadsnumber <= 0)
         {
-            throw new ArgumentException("Количество потоков должно быть положительным", nameof(threadsNumber));
+            throw new ArgumentException("Количество потоков должно быть положительным", nameof(threadsnumber));
         }    
         
         double len = b - a;
@@ -46,7 +46,7 @@ public class DefiniteIntegral
                 try
                 {
                     double partRes = TrapMethod(localPartLeft, localPartRight, function, step);
-                    Interlocked.Add(ref totalSum, partRes);
+                    AtomAdd(ref totalSum, partRes);
                 }
                 catch (Exception ex)
                 {
@@ -87,5 +87,18 @@ public class DefiniteIntegral
         }
         return sum;
     }
+
+    private static void AtomAdd(ref double current, double value)
+    {
+        double curValue=0.0;
+        double newValue=0.0;
+        do
+        {
+            curValue = current;
+            newValue = curValue + value;
+        }
+        while (curValue != Interlocked.CompareExchange(ref current, newValue, curValue));
+    }
+
     
 }
