@@ -76,7 +76,7 @@ public class SchedulerThread
             {
                 break;
             }
-            if (_queue.TryTake(out ICommand? newCommand, timeout: 0))
+            if (_queue.TryTake(out ICommand? newCommand, TimeSpan.Zero))
             {
                 _scheduler.Add(newCommand);
             }
@@ -108,7 +108,7 @@ public class SchedulerThread
                 {
                     break;
                 }
-                if (_queue.TryTake(out ICommand? cmd, timeout: Timeout.Infinite))
+                if (_queue.TryTake(out ICommand? cmd, Timeout.InfiniteTimeSpan))
                 {
                     _scheduler.Add(cmd);
                 }
