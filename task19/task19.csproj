@@ -10,7 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\task17\task17.csproj" />
     <ProjectReference Include="..\task18\task18.csproj" />
-    <PackageReference Include="ScottPlot" Version="5.0.36" />
+    <PackageReference Include="ScottPlot" Version="5.1.59" />
   </ItemGroup>
 
 </Project>
