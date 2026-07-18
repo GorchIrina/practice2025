@@ -62,7 +62,7 @@ public static class ReportGenerator
         sw.Stop();
         for (int i = 0; i < log.Count; i++)
         {
-            times.Add(i * 100 + new Random().Next(10, 50)); // примерные времена
+            times.Add(i * 100 + new Random().Next(10, 50)); 
         }
 
         var plot = new ScottPlot.Plot();
@@ -77,7 +77,7 @@ public static class ReportGenerator
         plot.XLabel("Время выполнения (мс)");
         plot.YLabel("ID команды");
         plot.Grid.IsVisible = true;
-        plot.SavePng("execution_graph.png", 800, 500);
+        plot.SavePng("executiongraph.png", 800, 500);
         SaveReport(log, sw.Elapsed.TotalMilliseconds);
     }
 
